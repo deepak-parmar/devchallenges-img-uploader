@@ -1,0 +1,12 @@
+@keyframes upload-loader {
+  from {
+    transform: translateX(-150%);
+  }
+  to {
+    transform: translateX(400%);
+  }
+}
+
+.animate-upload-loader {
+  animation: upload-loader 2s ease-in-out infinite;
+}
