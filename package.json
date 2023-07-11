@@ -4,8 +4,7 @@
     "dev": "vite build & nodemon server.js",
     "deploy": "npm run build-css & vite build & vercel --prod",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "build-css": "npx tailwindcss -o ./src/css/main.css",
-    "par": "nodemon server.js || npx tailwindcss -o ./src/css/main.css --watch"
+    "build-css": "npx tailwindcss -o ./src/css/main.css"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
