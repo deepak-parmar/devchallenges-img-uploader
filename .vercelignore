@@ -1,0 +1,8 @@
+.env
+.eslintrc.cjs
+.gitignore
+/index.html
+vite.config.js
+
+public
+src
