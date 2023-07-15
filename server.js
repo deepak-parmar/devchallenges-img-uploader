@@ -9,7 +9,6 @@ import {
   ref,
   uploadString,
 } from "firebase/storage";
-import morgan from "morgan";
 import multer from "multer";
 import { getFirebaseConfig } from "./firebase-config.js";
 
@@ -50,7 +49,9 @@ app.use(async (req, res, next) => {
 app.use(express.static("dist"));
 
 if (app.get("env") === "development") {
-  app.use(morgan("dev"));
+  await import("morgan").then((data) => {
+    app.use(data.default("dev"));
+  });
 }
 
 /**
@@ -71,7 +72,7 @@ app.post("/upload/", (req, res) => {
     // File content
     const newImgCont = `data:${mimetype};base64,${buffer.toString("base64")}`;
     const newImgRef = ref(getStorage(), newImgFullName);
-    
+
     await uploadString(newImgRef, newImgCont, "data_url")
       .then(async () => {
         res.send({
