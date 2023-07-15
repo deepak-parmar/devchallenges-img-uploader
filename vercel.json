@@ -1,5 +1,6 @@
 {
     "version": 2,
+    "buildCommand": "npm run watch-css & vite build",
     "builds": [
         {
             "src": "server.js",
