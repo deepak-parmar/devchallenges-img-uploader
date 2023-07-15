@@ -67,7 +67,7 @@ app.post("/upload/", (req, res) => {
     const { originalname, mimetype, buffer } = req.file;
     const fileName = Date.now();
     // New filename for storage (<timestamp>.<extension>)
-    const newImgFullName = `${fileName}.${originalname.split(".").slice(-1)}`;
+    const newImgFullName = `${fileName}.${originalname.split(".").at(-1)}`;
     // File content
     const newImgCont = `data:${mimetype};base64,${buffer.toString("base64")}`;
     const newImgRef = ref(getStorage(), newImgFullName);
