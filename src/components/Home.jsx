@@ -10,7 +10,7 @@ export default function Home() {
 
   const handleChange = async (e) => {
     e.preventDefault();
-    dispatch(updateStatus({ status: "loading" }));
+    dispatch(updateStatus({ status: "uploading" }));
     await postImage(e.target.files[0], dispatch);
   };
 

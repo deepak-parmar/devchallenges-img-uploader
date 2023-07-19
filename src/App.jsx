@@ -9,7 +9,7 @@ function App() {
   const imageState = useSelector((state) => state.image);
 
   switch (imageState.status) {
-    case "loading":
+    case "uploading":
       return <UploadLoader />;
 
     case "success":
