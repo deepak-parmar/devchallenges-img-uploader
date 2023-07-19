@@ -8,11 +8,7 @@ const imageReducer = createSlice({
   reducers: {
     updateStatus: (state, newState) => {
       // loading, failed
-      const newStatus = newState.payload.status
-      state.status = newStatus;
-      if (newStatus === "failed") {
-        state.err = newState.payload.err;
-      }
+      return newState.payload;
     },
     setImage: (state, image) => {
       // state.img = axios
