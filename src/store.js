@@ -7,7 +7,7 @@ const imageReducer = createSlice({
   initialState: initState,
   reducers: {
     updateStatus: (state, newState) => {
-      // loading, failed
+      // status can be 'uploading' or 'failed'
       return newState.payload;
     },
     setImage: (state, image) => {
